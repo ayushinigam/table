@@ -3,20 +3,20 @@ webpackJsonp([14],{
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(315);
+	module.exports = __webpack_require__(290);
 
 
 /***/ },
 
-/***/ 315:
+/***/ 290:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var React = __webpack_require__(4);
 	var ReactDOM = __webpack_require__(37);
-	var Table = __webpack_require__(188);
-	__webpack_require__(214);
+	var Table = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rc-table\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rc-table/assets/index.less\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
 	var columns = [{ title: 'First Name', dataIndex: 'names.first', key: 'a', width: 100 }, { title: 'Last Name', dataIndex: 'names.last', key: 'b', width: 100 }, { title: 'Age', dataIndex: 'age', key: 'c', width: 100 }];
 	
