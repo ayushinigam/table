@@ -278,6 +278,9 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 <span class="hljs-keyword">const</span> data = [
   {
     a: <span class="hljs-string">'a1'</span>,
+    b: <span class="hljs-string">'b1'</span>,
+    c: <span class="hljs-string">'c1'</span>,
+    d: <span class="hljs-string">'d1'</span>
   },
   {
     a: <span class="hljs-string">'a2'</span>,
@@ -292,6 +295,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
         b: <span class="hljs-string">'b2-2'</span>,
       },
     ],
+    c: <span class="hljs-string">'c2'</span>
   },
   {
     a: <span class="hljs-string">'a3'</span>,
@@ -307,11 +311,12 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   },
   render() {
     <span class="hljs-keyword">const</span> columns = [
-      { title: <span class="hljs-string">'title1'</span>, dataIndex: <span class="hljs-string">'a'</span>, key: <span class="hljs-string">'a'</span>, width: <span class="hljs-number">100</span> },
-      { title: <span class="hljs-string">'title2'</span>, dataIndex: <span class="hljs-string">'b'</span>, key: <span class="hljs-string">'b'</span>, width: <span class="hljs-number">100</span> },
-      { title: <span class="hljs-string">'title3'</span>, dataIndex: <span class="hljs-string">'c'</span>, key: <span class="hljs-string">'c'</span>, width: <span class="hljs-number">200</span> },
+      { title: <span class="hljs-string">'title1'</span>, dataIndex: <span class="hljs-string">'a'</span>, key: <span class="hljs-string">'a'</span>, width: <span class="hljs-number">100</span>, parentID: <span class="hljs-string">'parent'</span> },
+      { title: <span class="hljs-string">'title2'</span>, dataIndex: <span class="hljs-string">'b'</span>, key: <span class="hljs-string">'b'</span>, width: <span class="hljs-number">100</span>, parentID: <span class="hljs-string">'parent'</span> },
+      { title: <span class="hljs-string">'title3'</span>, dataIndex: <span class="hljs-string">'c'</span>, key: <span class="hljs-string">'c'</span>, width: <span class="hljs-number">200</span>, parentID: <span class="hljs-string">'a'</span> },
+      { title: <span class="hljs-string">'title4'</span>, dataIndex: <span class="hljs-string">'d'</span>, key: <span class="hljs-string">'d'</span>, width: <span class="hljs-number">200</span>, parentID: <span class="hljs-string">'b'</span> },
       {
-        title: <span class="hljs-string">'Operations'</span>, dataIndex: <span class="hljs-string">''</span>, key: <span class="hljs-string">'x'</span>, render: (text, record) =&gt; {
+        title: <span class="hljs-string">'Operations'</span>, dataIndex: <span class="hljs-string">''</span>, key: <span class="hljs-string">'x'</span>, parentID: <span class="hljs-string">'a'</span>, render: (text, record) =&gt; {
           <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{e</span> =&gt;</span> this.handleClick(record, e)}&gt;click {record.a}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>;</span>
         },
       },

@@ -3,12 +3,12 @@ webpackJsonp([21],{
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(319);
+	module.exports = __webpack_require__(322);
 
 
 /***/ },
 
-/***/ 319:
+/***/ 322:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17,10 +17,13 @@ webpackJsonp([21],{
 	var React = __webpack_require__(4);
 	var ReactDOM = __webpack_require__(37);
 	var Table = __webpack_require__(188);
-	__webpack_require__(211);
+	__webpack_require__(214);
 	
 	var data = [{
-	  a: 'a1'
+	  a: 'a1',
+	  b: 'b1',
+	  c: 'c1',
+	  d: 'd1'
 	}, {
 	  a: 'a2',
 	  b: 'b2',
@@ -30,7 +33,8 @@ webpackJsonp([21],{
 	  }, {
 	    a: 'a2-2',
 	    b: 'b2-2'
-	  }]
+	  }],
+	  c: 'c2'
 	}, {
 	  a: 'a3',
 	  c: 'c3',
@@ -46,8 +50,8 @@ webpackJsonp([21],{
 	  render: function render() {
 	    var _this = this;
 	
-	    var columns = [{ title: 'title1', dataIndex: 'a', key: 'a', width: 100 }, { title: 'title2', dataIndex: 'b', key: 'b', width: 100 }, { title: 'title3', dataIndex: 'c', key: 'c', width: 200 }, {
-	      title: 'Operations', dataIndex: '', key: 'x', render: function render(text, record) {
+	    var columns = [{ title: 'title1', dataIndex: 'a', key: 'a', width: 100, parentID: 'parent' }, { title: 'title2', dataIndex: 'b', key: 'b', width: 100, parentID: 'parent' }, { title: 'title3', dataIndex: 'c', key: 'c', width: 200, parentID: 'a' }, { title: 'title4', dataIndex: 'd', key: 'd', width: 200, parentID: 'b' }, {
+	      title: 'Operations', dataIndex: '', key: 'x', parentID: 'a', render: function render(text, record) {
 	        return React.createElement(
 	          'a',
 	          { href: '#', onClick: function onClick(e) {
