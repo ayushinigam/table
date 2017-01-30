@@ -9,18 +9,24 @@ export default React.createClass({
     prefixCls: PropTypes.string,
     rowStyle: PropTypes.object,
     rows: PropTypes.array,
+    prefixClsExpand: PropTypes.string
   },
   getInitialState() {
     return {
       rows: this.props.rows
     };
   },
+  getDefaultProps() {
+    return {
+      prefixClsExpand: 'rc-table-row'
+    };
+  },
   // shouldComponentUpdate(nextProps) {
   //   return !shallowequal(nextProps, this.props);
   // },
   componentDidMount() {
-    const data = this.state.rows[0]
-    data.forEach(child=>{
+    const rows = this.state.rows[0]
+    rows.forEach(child=>{
       if(child.parent !== 'parent' && child.colIndex) {
         $(`.rc-table-body td:nth-of-type(${child.colIndex + 2})`).hide();
         $(`.rc-table-body th:nth-of-type(${child.colIndex + 2})`).hide();
@@ -28,7 +34,6 @@ export default React.createClass({
     })
   },
   getChild(expanded, record, e) {
-    console.log(expanded)
     const rows = this.state.rows[0]
     const children = _.filter(rows, {'parent': record.key})
     children.forEach(child=>{
@@ -47,9 +52,8 @@ export default React.createClass({
     })
   },
   render() {
-    const { prefixCls, rowStyle } = this.props;
+    const { prefixCls, rowStyle, prefixClsExpand} = this.props;
     const { rows } = this.state;
-    console.log( this.state )
     return (
       <thead className={`${prefixCls}-thead`}>
         {
@@ -60,9 +64,9 @@ export default React.createClass({
                   return (<th {...cellProps} key={i}> {cellProps.children}
                   <ExpandIcon
                     expandable={true}
-                    prefixCls="rc-table-row"
+                    prefixCls={prefixClsExpand}
                     onExpand={this.getChild}
-                    needIndentSpaced={false}
+                    needIndentSpaced={true}
                     expanded={cellProps.expanded}
                     record={cellProps}
                   />
