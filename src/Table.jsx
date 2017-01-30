@@ -220,7 +220,7 @@ const Table = React.createClass({
     rows = rows || [];
     rows[currentRow] = rows[currentRow] || [];
 
-    columns.forEach(column => {
+    columns.forEach((column,colIndex) => {
       if (column.rowSpan && rows.length < column.rowSpan) {
         while (rows.length < column.rowSpan) {
           rows.push([]);
@@ -230,6 +230,9 @@ const Table = React.createClass({
         key: column.key,
         className: column.className || '',
         children: column.title,
+        parent: column.parentID,
+        colIndex,
+        expanded: false
       };
       if (column.children) {
         this.getHeaderRows(column.children, currentRow + 1, rows);

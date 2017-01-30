@@ -7,6 +7,9 @@ require('rc-table/assets/index.less');
 const data = [
   {
     a: 'a1',
+    b: 'b1',
+    c: 'c1',
+    d: 'd1'
   },
   {
     a: 'a2',
@@ -21,6 +24,7 @@ const data = [
         b: 'b2-2',
       },
     ],
+    c: 'c2'
   },
   {
     a: 'a3',
@@ -36,11 +40,12 @@ const MyTable = React.createClass({
   },
   render() {
     const columns = [
-      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
-      { title: 'title2', dataIndex: 'b', key: 'b', width: 100 },
-      { title: 'title3', dataIndex: 'c', key: 'c', width: 200 },
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100, parentID: 'parent' },
+      { title: 'title2', dataIndex: 'b', key: 'b', width: 100, parentID: 'parent' },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 200, parentID: 'a' },
+      { title: 'title4', dataIndex: 'd', key: 'd', width: 200, parentID: 'b' },
       {
-        title: 'Operations', dataIndex: '', key: 'x', render: (text, record) => {
+        title: 'Operations', dataIndex: '', key: 'x', parentID: 'a', render: (text, record) => {
           return <a href="#" onClick={e => this.handleClick(record, e)}>click {record.a}</a>;
         },
       },

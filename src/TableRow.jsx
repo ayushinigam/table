@@ -104,7 +104,6 @@ const TableRow = React.createClass({
       expandIconColumnIndex, expandIconAsCell, expanded, expandRowByClick,
       expandable, onExpand, needIndentSpaced, indent, indentSize,
     } = this.props;
-
     let { className } = this.props;
 
     if (this.state.hovered) {
