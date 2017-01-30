@@ -1,7 +1,7 @@
 /* eslint-disable no-console,func-names,react/no-multi-comp */
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Table = require('rc-table');
+const Table = require('rc-table-forked');
 require('rc-table/assets/index.less');
 require('rc-table/assets/bordered.less');
 

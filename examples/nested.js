@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const Table = require('rc-table');
+const Table = require('rc-table-forked');
 require('rc-table/assets/index.less');
 
 const columns = [

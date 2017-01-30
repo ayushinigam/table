@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import shallowequal from 'shallowequal';
 import _ from 'lodash';
-import { $ } from '../utils/ki';
+import { $ } from './utils/ki';
 import ExpandIcon from './ExpandIcon';
 
 export default React.createClass({
